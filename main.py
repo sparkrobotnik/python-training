@@ -12,31 +12,33 @@ usuario = {
 	'email':	""
 }
 
+def registrar_usuario():
+	resposta = "";
+	while resposta != "S":
+		resposta = ""
+		
+		clear()
+		
+		print("\t———CADASTRO DE USUARIO———\n")
+		usuario['nome']	= input("NOME(COMPLETO): ")
+		usuario['idade']= input("IDADE:\t\t")
+		usuario['email']= input("EMAIL:\t\t")
+		
+		#PEDIR CONFIRMAÇÃO DOS DADOS
+		while resposta != "S" and resposta != "N":
+			clear()
+			
+			print("\t———CONFIRMAÇÃO DE DADOS———\n")
+			print(f"NOME: 	{usuario['nome']}")
+			print(f"IDADE:	{usuario['idade']} anos")
+			print(f"EMAIL:	{usuario['email']}")
+			
+			resposta = input("\n\tESTE DADOS ESTÃO CORRETOS? (S / N): ").upper()
+
 #MOSTRAR INFORMACOES DO APP
 clear()
 print(f"{app_config['nome']} versão: {app_config['versao']} - autor: {app_config['autor']}")
 
 #PEDIR CREDENCIAIS DO USUARIO
 sleep(2)
-
-resposta = "";
-while resposta != "S":
-	resposta = ""
-	
-	clear()
-	
-	print("\t———CADASTRO DE USUARIO———\n")
-	usuario['nome']	= input("NOME(COMPLETO): ")
-	usuario['idade']= input("IDADE:\t\t")
-	usuario['email']= input("EMAIL:\t\t")
-	
-	#PEDIR CONFIRMAÇÃO DOS DADOS
-	while resposta != "S" and resposta != "N":
-		clear()
-		
-		print("\t———CONFIRMAÇÃO DE DADOS———\n")
-		print(f"NOME: 	{usuario['nome']}")
-		print(f"IDADE:	{usuario['idade']} anos")
-		print(f"EMAIL:	{usuario['email']}")
-		
-		resposta = input("\n\tESTE DADOS ESTÃO CORRETOS? (S / N): ").upper()
+registrar_usuario()
