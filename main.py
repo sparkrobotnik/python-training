@@ -26,4 +26,4 @@ print(f"NOME: 	{usuario['nome']}")
 print(f"IDADE:	{usuario['idade']} anos")
 print(f"EMAIL:	{usuario['email']}")
 
-resposta = input("\n\tESTE DADOS ESTÃO CORRETOS? (S / N): ")
+resposta = input("\n\tESTE DADOS ESTÃO CORRETOS? (S / N): ").upper()
